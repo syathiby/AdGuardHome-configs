@@ -6,7 +6,7 @@ http:
   session_ttl: 720h
 users:
   - name: syathiby
-    password: $2a$10$h.mfMCJBIIAopEULyJYFPuvyhKZWs2LApEW7Yv4XmY/Bhy8Zp9aea
+    password: $2a$10$ojhkRwv3YgIzoECuIz1HTesn9AKWgQ7hNyZ6JOYhKBVDrlaFqIHYa
 auth_attempts: 5
 block_auth_min: 15
 http_proxy: ""
@@ -51,6 +51,7 @@ dns:
   trusted_proxies:
     - 127.0.0.0/8
     - ::1/128
+  cache_enabled: true
   cache_size: 4194304
   cache_ttl_min: 0
   cache_ttl_max: 0
@@ -157,6 +158,10 @@ filters:
     id: 1743462323
 whitelist_filters: []
 user_rules:
+  - '||geometryjump.com^$client=~192.168.10.0/24|~192.168.30.0/24|~192.168.60.0/24'
+  - '||crazygames.com^$client=~192.168.10.0/24|~192.168.30.0/24|~192.168.60.0/24'
+  - '||poki.com^$client=~192.168.10.0/24|~192.168.30.0/24|~192.168.60.0/24'
+  - '||deadshot.io^$client=~192.168.10.0/24|~192.168.30.0/24|~192.168.60.0/24'
   - '||facebook.com^$client=~192.168.10.0/24|~192.168.30.0/24|~192.168.50.0/24|~192.168.60.0/24'
   - '||instagram.com^$client=~192.168.10.0/24|~192.168.30.0/24|~192.168.50.0/24|~192.168.60.0/24'
   - '||tiktok.com^$client=~192.168.10.0/24|~192.168.30.0/24|~192.168.50.0/24|~192.168.60.0/24'
@@ -317,6 +322,35 @@ clients:
     hosts: true
   persistent:
     - safe_search:
+        enabled: true
+        bing: true
+        duckduckgo: true
+        ecosia: true
+        google: true
+        pixabay: true
+        yandex: true
+        youtube: true
+      blocked_services:
+        schedule:
+          time_zone: Local
+        ids: []
+      name: LAN AKHWAT
+      ids:
+        - 192.168.30.1/24
+      tags:
+        - device_pc
+      upstreams: []
+      uid: 0198e41d-40fa-7a5f-94e9-00eb0c380cf3
+      upstreams_cache_size: 0
+      upstreams_cache_enabled: false
+      use_global_settings: true
+      filtering_enabled: false
+      parental_enabled: false
+      safebrowsing_enabled: false
+      use_global_blocked_services: false
+      ignore_querylog: false
+      ignore_statistics: false
+    - safe_search:
         enabled: false
         bing: true
         duckduckgo: true
@@ -329,17 +363,71 @@ clients:
         schedule:
           time_zone: Local
         ids: []
-      name: unblock
+      name: LAN Ikhwan
       ids:
         - 192.168.10.1/24
-        - 192.168.30.1/24
-        - 192.168.50.1/24
-        - 192.168.60.1/24
-        - 3c:52:a1:63:60:10
       tags:
         - device_pc
       upstreams: []
       uid: 0195ee78-66d9-7708-97e4-01bd1094d705
+      upstreams_cache_size: 0
+      upstreams_cache_enabled: false
+      use_global_settings: true
+      filtering_enabled: false
+      parental_enabled: false
+      safebrowsing_enabled: false
+      use_global_blocked_services: false
+      ignore_querylog: false
+      ignore_statistics: false
+    - safe_search:
+        enabled: true
+        bing: true
+        duckduckgo: true
+        ecosia: true
+        google: true
+        pixabay: true
+        yandex: true
+        youtube: true
+      blocked_services:
+        schedule:
+          time_zone: Local
+        ids: []
+      name: LAN STREAMING
+      ids:
+        - 192.168.60.1/24
+      tags:
+        - device_pc
+      upstreams: []
+      uid: 0198e41e-149f-79ac-967c-b23fa2009992
+      upstreams_cache_size: 0
+      upstreams_cache_enabled: false
+      use_global_settings: true
+      filtering_enabled: false
+      parental_enabled: false
+      safebrowsing_enabled: false
+      use_global_blocked_services: false
+      ignore_querylog: false
+      ignore_statistics: false
+    - safe_search:
+        enabled: true
+        bing: true
+        duckduckgo: true
+        ecosia: true
+        google: true
+        pixabay: true
+        yandex: true
+        youtube: true
+      blocked_services:
+        schedule:
+          time_zone: Local
+        ids: []
+      name: WIFI MUDIR
+      ids:
+        - 3c:52:a1:63:60:10
+      tags:
+        - device_phone
+      upstreams: []
+      uid: 0198e41e-aadf-76f3-983b-3bf12cce945f
       upstreams_cache_size: 0
       upstreams_cache_enabled: false
       use_global_settings: true
@@ -362,4 +450,4 @@ os:
   group: ""
   user: ""
   rlimit_nofile: 0
-schema_version: 29
+schema_version: 30
