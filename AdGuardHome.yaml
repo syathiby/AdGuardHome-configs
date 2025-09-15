@@ -11,7 +11,7 @@ auth_attempts: 5
 block_auth_min: 15
 http_proxy: ""
 language: en
-theme: light
+theme: auto
 dns:
   bind_hosts:
     - 192.168.50.100
@@ -239,6 +239,11 @@ user_rules:
   - '@@||syathiby.sch.id^$important'
   - '@@||repository.dinus.ac.id^$important'
   - '@@||wise.com^$important'
+  - '@@||whatsapp.com^'
+  - '@@||api.whatsapp.com^'
+  - '@@||behance.net^'
+  - '@@||archive.org^'
+  - '@@||ia902902.us.archive.org^'
 dhcp:
   enabled: false
   interface_name: ""
