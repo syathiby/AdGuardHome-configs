@@ -244,6 +244,8 @@ user_rules:
   - '@@||behance.net^'
   - '@@||archive.org^'
   - '@@||ia902902.us.archive.org^'
+  - '@@||ngrok.com^'
+  - '@@||ngrok-free.app^'
 dhcp:
   enabled: false
   interface_name: ""
